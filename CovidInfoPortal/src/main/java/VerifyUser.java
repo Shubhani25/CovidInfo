@@ -81,7 +81,7 @@ public class VerifyUser extends HttpServlet {
 					}
 				}
 				
-				//oif(id.equals("state@hmail.com") & pwd.equals("state")) {
+				//if(id.equals("state@hmail.com") & pwd.equals("state")) {
 					//response.sendRedirect("stadmindashboard.jsp");
 					
 				//}
