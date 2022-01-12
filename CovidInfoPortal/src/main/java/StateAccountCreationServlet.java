@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@SuppressWarnings("serial")
+
 public class StateAccountCreationServlet extends HttpServlet {
 	
 	private Connection con;

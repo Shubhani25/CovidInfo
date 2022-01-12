@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@SuppressWarnings("serial")
+
 public class VerifyUser extends HttpServlet {
 	private Connection con;
 	private PreparedStatement ps1;
