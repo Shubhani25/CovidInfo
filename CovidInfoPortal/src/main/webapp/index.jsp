@@ -10,7 +10,7 @@
 	<h3>Covid Information Portal</h3>
 	<hr>
 	<form action = "VerifyUser" method="post">
-		<table border="2">
+		<table border="0">
 			<tr>
 				<td>Email:</td>
 				<td><input type="text" name = "uid"/></td>
