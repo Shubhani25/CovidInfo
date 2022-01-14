@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -9,8 +6,8 @@
 <body>
 	<h3>Covid Information Portal</h3>
 	<hr>
-	<form action = "VerifyUser" method="post">
-		<table border="0">
+	<form action = "VerifyUser" method="get">
+		<table>
 			<tr>
 				<td>Email:</td>
 				<td><input type="text" name = "uid"/></td>

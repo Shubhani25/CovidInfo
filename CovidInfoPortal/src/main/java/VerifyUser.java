@@ -70,29 +70,30 @@ public class VerifyUser extends HttpServlet {
             ResultSet rs=ps2.executeQuery();
             
             boolean found=rs.next();
-            if(found){//credentials are correct (id/pw)
+            if(found){
+            	//credentials are correct (id/pw)
                 String status=rs.getString("status");
                 String uid=rs.getString("userid");
-            //check the status
-            if(status.equals("disabled")){
-            //if-disabled-then-we-will-show-profile-completion-form
-            out.println("<html>");
-            out.println("<body>");
-            out.println("<h3>Profile-Completion-Form</h3>");
-            out.println("<form action=UpdateStateAdminProfile>");
-            //userid,password,uname,email,address,mobile
-            out.println("<pre>");
-            out.println("Userid     : <input type=text name=uid value="+uid+">");
-            out.println("Password   : <input type=password name=password>");
-            out.println("Username   : <input type=text name=uname>");
-            out.println("Address    : <input type=text name=address>");
-            out.println("Email      : <input type=text name=email>");
-            out.println("Mobile     : <input type=text name=mobile>");
-            out.println("<input type=submit value=Update>");
-            out.println("</pre>");
-            out.println("</form>");
-            out.println("</body>");
-            out.println("</html>");
+                //check the status
+	            if(status.equals("disabled")){
+	            //if-disabled-then-we-will-show-profile-completion-form
+		            out.println("<html>");
+		            out.println("<body>");
+		            out.println("<h3>Profile-Completion-Form</h3>");
+		            out.println("<form action=UpdateStateAdminProfile>");
+		            //userid,password,uname,email,address,mobile
+		            out.println("<pre>");
+		            out.println("Userid     : <input type=text name=uid value="+uid+">");
+		            out.println("Password   : <input type=password name=password>");
+		            out.println("Username   : <input type=text name=uname>");
+		            out.println("Address    : <input type=text name=address>");
+		            out.println("Email      : <input type=text name=email>");
+		            out.println("Mobile     : <input type=text name=mobile>");
+		            out.println("<input type=submit value=Update>");
+		            out.println("</pre>");
+		            out.println("</form>");
+		            out.println("</body>");
+		            out.println("</html>");
             }else{
             //if-enabled-then-we-will-display-dashboard
                 //storing the id to session, state into session
