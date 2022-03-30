@@ -13,8 +13,20 @@ CREATE TABLE Users(
  	state varchar(20),
  	username varchar(20),
  	email varchar(20),
- 	address varchar(20),
+ 	address varchar(20), 
  	mobile varchar(20),
- 	status varchar(20));
+ 	status varchar(20)
+ );
+ */
+/*
+CREATE TABLE covidinfo(
+	sno integer PRIMARY KEY AUTO_INCREMENT,
+	idate Date,
+	state varchar(20),
+	total integer,
+	active integer,
+	deaths integer,
+	userid varchar(10)
+);
  */
  

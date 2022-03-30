@@ -9,7 +9,7 @@
 	<form action = "VerifyUser" method="get">
 		<table>
 			<tr>
-				<td>Email:</td>
+				<td>UserID:</td>
 				<td><input type="text" name = "uid"/></td>
 			</tr>	
 			<tr>

@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 
-public class RegistrationServlet extends HttpServlet {
+public class SaveInfo extends HttpServlet {
 	
 	private Connection con;
 	private PreparedStatement ps;
@@ -20,7 +20,9 @@ public class RegistrationServlet extends HttpServlet {
 	public void init() {
 		try {
 			con = Utility.connect();
-			String sql = "INSERT INTO USERS VALUES(?,?,?,?,?)";
+			//String sql = "INSERT INTO covidinfo(idate,state,total,active,deaths,userid) VALUES(?,?,?,?,?,? )";
+			String sql = "INSERT INTO covidinfo(idate,state,total,active,deaths,userid) VALUES(now(),?,?,?,?,? )";
+
 			ps = con.prepareStatement(sql);
 			
 		}
@@ -41,20 +43,24 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		//read the data
-		String userid = request.getParameter("uid");
-		String password = request.getParameter("password");
-		String username = request.getParameter("username");
-		String address = request.getParameter("address");
-		String mobile = request.getParameter("mobile");
-		
+		//state=&userid=&total=&active=&deaths=
+		String userid = request.getParameter("userid");
+		String state = request.getParameter("state");
+		int total = Integer.parseInt(request.getParameter("total"));
+		int active = Integer.parseInt(request.getParameter("active"));
+		int deaths = Integer.parseInt(request.getParameter("deaths"));
+		//java.util.Date dt = new java.util.Date();
+		//long val = dt.getTime();
+		//java.sql.Date idate = new java.sql.Date(val);
 		//process the data
 		try {
-			
-			ps.setString(1, userid);
-			ps.setString(2, password);
-			ps.setString(3,  username);
-			ps.setString(4,  address);
-			ps.setString(5, mobile);
+			//idate,state,total,active,deaths,userid
+			//ps.setDate(1, idate);			
+			ps.setString(1, state);
+			ps.setInt(2,total);
+			ps.setInt(3,active);
+			ps.setInt(4,deaths);
+			ps.setString(5,userid);
 			
 			ps.executeUpdate();
 			
@@ -62,8 +68,8 @@ public class RegistrationServlet extends HttpServlet {
 			
 			out.println("<html>");
 			out.println("<body>");
-			out.println("<h3>REGISTERED</h3>");
-			out.println("<h4><a href=index.jsp>Login Now</a></h4>");
+			out.println("<h3>Information Submited Succesfully</h3>");
+			out.println("<h4><a href=stadmindashboard.jsp>Dashboard</a></h4>");
 			
 			out.println("</body>");
 			out.println("</html>");

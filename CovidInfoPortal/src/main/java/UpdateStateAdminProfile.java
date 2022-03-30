@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 
-public class RegistrationServlet extends HttpServlet {
+public class UpdateStateAdminProfile extends HttpServlet {
 	
 	private Connection con;
 	private PreparedStatement ps;
@@ -20,7 +20,7 @@ public class RegistrationServlet extends HttpServlet {
 	public void init() {
 		try {
 			con = Utility.connect();
-			String sql = "INSERT INTO USERS VALUES(?,?,?,?,?)";
+			String sql = "Update stateadmins set password=?, username=?, email=?, address=?, mobile=?, status='enabled' where userid=?"; 
 			ps = con.prepareStatement(sql);
 			
 		}
@@ -46,27 +46,19 @@ public class RegistrationServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String address = request.getParameter("address");
 		String mobile = request.getParameter("mobile");
-		
+		String email = request.getParameter("email");	
 		//process the data
 		try {
-			
-			ps.setString(1, userid);
-			ps.setString(2, password);
-			ps.setString(3,  username);
-			ps.setString(4,  address);
+			ps.setString(1, password);
+			ps.setString(2, username);
+			ps.setString(3, email);
+			ps.setString(4, address);
 			ps.setString(5, mobile);
+			ps.setString(6, userid);
 			
 			ps.executeUpdate();
 			
-			
-			
-			out.println("<html>");
-			out.println("<body>");
-			out.println("<h3>REGISTERED</h3>");
-			out.println("<h4><a href=index.jsp>Login Now</a></h4>");
-			
-			out.println("</body>");
-			out.println("</html>");
+			response.sendRedirect("stadmindashboard.jsp");
 			
 			
 		}

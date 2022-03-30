@@ -39,4 +39,24 @@
     <servlet-name>StateAccountCreationServlet</servlet-name>
     <url-pattern>/StateAccountCreationServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateStateAdminProfile</display-name>
+    <servlet-name>UpdateStateAdminProfile</servlet-name>
+    <servlet-class>UpdateStateAdminProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateStateAdminProfile</servlet-name>
+    <url-pattern>/UpdateStateAdminProfile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveInfo</display-name>
+    <servlet-name>SaveInfo</servlet-name>
+    <servlet-class>SaveInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveInfo</servlet-name>
+    <url-pattern>/SaveInfo</url-pattern>
+  </servlet-mapping>
 </web-app>

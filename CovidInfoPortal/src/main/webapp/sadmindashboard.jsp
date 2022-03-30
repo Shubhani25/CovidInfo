@@ -9,7 +9,7 @@
 <body>
 <h3><center>Super Admin Dashboard</center></h3>
 <pre>
-		<a href="">Create State Admin</a>
+		<a href="StateAccount.jsp">Create State Admin</a>
 		<a href="">View State Accounts</a>
 		<a href="">View User Account</a>
 		<a href="">View All State Data</a>

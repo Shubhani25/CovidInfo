@@ -81,11 +81,11 @@ public class VerifyUser extends HttpServlet {
 		            out.println("<body>");
 		            out.println("<h3>Profile-Completion-Form</h3>");
 		            out.println("<form action=UpdateStateAdminProfile>");
-		            //userid,password,uname,email,address,mobile
+		            //userid,password,username,email,address,mobile
 		            out.println("<pre>");
 		            out.println("Userid     : <input type=text name=uid value="+uid+">");
 		            out.println("Password   : <input type=password name=password>");
-		            out.println("Username   : <input type=text name=uname>");
+		            out.println("Username   : <input type=text name=username>");
 		            out.println("Address    : <input type=text name=address>");
 		            out.println("Email      : <input type=text name=email>");
 		            out.println("Mobile     : <input type=text name=mobile>");
