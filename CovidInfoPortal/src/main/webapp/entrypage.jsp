@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%
+	String userid = (String) session.getAttribute("userid");
+	if(userid==null){
+		response.sendRedirect("index.jsp");
+	}
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +16,6 @@
 <h3>Submit Info For Today</h3>
 <form action= "SaveInfo">
 	<pre>
-	State			<input type="text" name="state" />
-	UserID			<input type="text" name="userid" />
 	TotalCases		<input type="text" name="total" />
 	ActiveCases		<input type="text" name="active" />
 	TotalDeaths		<input type="text" name="deaths" />

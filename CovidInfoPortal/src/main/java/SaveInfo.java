@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import mypkg.Utility;
 
 import java.io.IOException;
@@ -44,8 +45,14 @@ public class SaveInfo extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		//read the data
 		//state=&userid=&total=&active=&deaths=
-		String userid = request.getParameter("userid");
-		String state = request.getParameter("state");
+		//String userid = request.getParameter("userid");
+		//String state = request.getParameter("state");
+		
+		//we read id, state from session which was stored by VerifyUser.
+		HttpSession session = request.getSession();
+		String userid = (String) session.getAttribute("userid");
+		String state = (String) session.getAttribute("state");
+		
 		int total = Integer.parseInt(request.getParameter("total"));
 		int active = Integer.parseInt(request.getParameter("active"));
 		int deaths = Integer.parseInt(request.getParameter("deaths"));
